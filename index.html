@@ -34,7 +34,7 @@
             <div v-if="emails.length < 10" class="spinner-border" role="status">
             </div>
             <ul v-else>
-                <li v-show="emails.length === 10" v-for="email in emails">
+                <li v-for="email in emails">
                     {{email}}
                 </li>
             </ul>
