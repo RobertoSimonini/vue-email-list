@@ -30,11 +30,15 @@
 </head>
 <body>
     <div id="root">
-        <ul>
-            <li v-show="emails.length === 10" v-for="email in emails">
-                {{email}}
-            </li>
-        </ul>
+        <div class="container d-flex align-items-center justify-content-center py-5">
+            <div v-if="emails.length < 10" class="spinner-border" role="status">
+            </div>
+            <ul v-else>
+                <li v-show="emails.length === 10" v-for="email in emails">
+                    {{email}}
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
