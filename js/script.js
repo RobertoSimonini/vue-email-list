@@ -17,15 +17,21 @@ const app = Vue.createApp ({
 
     data() {
         return {
-            emails: []
+            emails: [],
+            isLoading : false
         }
     },
     methods:  {
         getRandomEmail () {
+            this.isLoading = true; 
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then((response) => {
+                .then((response) => {
                 this.emails.push(response.data.response);
-        })
+                })  .catch(error => {
+                console.log(error);
+                })  .then (() => {
+                this.isLoading = false;
+                })
         }
     },
     mounted () {
