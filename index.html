@@ -31,7 +31,7 @@
 <body>
     <div id="root">
         <ul>
-            <li v-for="email in emails">
+            <li v-show="emails.length === 10" v-for="email in emails">
                 {{email}}
             </li>
         </ul>
